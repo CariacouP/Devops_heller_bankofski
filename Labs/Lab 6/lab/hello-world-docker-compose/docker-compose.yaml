@@ -1,0 +1,20 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    volumes:
+      - redis-data:/data # Mount a volume to store Redis data 
+  web:
+    # COMPLETE HERE
+    build: .
+    ports:
+      - "5000:8080"
+    environment:
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+    volumes:
+      - redis-data:/app/data # Mount the same volume for storing hit count
+
+volumes:
+  redis-data: # Define a named volume for Redis data

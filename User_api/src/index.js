@@ -3,7 +3,7 @@ const userRouter = require('./routes/user')
 const bodyParser = require('body-parser')
 
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 
 const db = require('./dbClient')
 db.on("error", (err) => {
@@ -24,5 +24,5 @@ const server = app.listen(port, (err) => {
   console.log("Server listening the port " + port)
 })
 
-
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 module.exports = server
