@@ -1,2 +1,2 @@
-labs/Lab_1/node_modules
-User_api/node_modules
+*/node_modules
+// ignore all node modules
